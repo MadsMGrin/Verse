@@ -1,0 +1,89 @@
+{
+    "packages": [
+        {
+            "desc": {
+                "name": "ScriptTesting",
+                "dirPath": "C:/Users/Mads/Documents/Fortnite Projects/ScriptTesting/Plugins/ScriptTesting/Content",
+                "settings": {
+                    "versePath": "/localhost/ScriptTesting",
+                    "verseScope": "PublicUser",
+                    "role": "Source",
+                    "verseVersion": 0,
+                    "dependencyPackages": [
+                        "ScriptTesting/Assets",
+                        "Verse",
+                        "UnrealEngine",
+                        "Fortnite"
+                    ]
+                }
+            },
+            "readOnly": false
+        },
+        {
+            "desc": {
+                "name": "ScriptTesting/Assets",
+                "dirPath": "C:/Users/Mads/AppData/Local/UnrealEditorFortnite/Saved/VerseProject/ScriptTesting/ScriptTesting-Assets",
+                "settings": {
+                    "versePath": "/localhost/ScriptTesting",
+                    "verseScope": "InternalUser",
+                    "role": "External",
+                    "verseVersion": 0,
+                    "treatModulesAsImplicit": true,
+                    "dependencyPackages": [
+                        "Verse",
+                        "UnrealEngine",
+                        "Fortnite"
+                    ]
+                }
+            },
+            "readOnly": false
+        },
+        {
+            "desc": {
+                "name": "Verse",
+                "dirPath": "C:/Users/Mads/AppData/Local/UnrealEditorFortnite/Saved/VerseProject/ScriptTesting/Verse",
+                "settings": {
+                    "versePath": "/Verse.org",
+                    "verseScope": "PublicAPI",
+                    "role": "External",
+                    "dependencyPackages": [],
+                    "vniDestDir": "Verse"
+                }
+            },
+            "readOnly": true
+        },
+        {
+            "desc": {
+                "name": "UnrealEngine",
+                "dirPath": "C:/Users/Mads/AppData/Local/UnrealEditorFortnite/Saved/VerseProject/ScriptTesting/UnrealEngine",
+                "settings": {
+                    "versePath": "/UnrealEngine.com",
+                    "verseScope": "PublicAPI",
+                    "role": "External",
+                    "dependencyPackages": [
+                        "Verse"
+                    ],
+                    "vniDestDir": "UnrealEngine"
+                }
+            },
+            "readOnly": true
+        },
+        {
+            "desc": {
+                "name": "Fortnite",
+                "dirPath": "C:/Users/Mads/AppData/Local/UnrealEditorFortnite/Saved/VerseProject/ScriptTesting/Fortnite",
+                "settings": {
+                    "versePath": "/Fortnite.com",
+                    "verseScope": "PublicAPI",
+                    "role": "External",
+                    "dependencyPackages": [
+                        "UnrealEngine",
+                        "Verse"
+                    ],
+                    "vniDestDir": "Fortnite"
+                }
+            },
+            "readOnly": true
+        }
+    ]
+}
