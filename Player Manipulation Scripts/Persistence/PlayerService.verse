@@ -34,7 +34,6 @@ PlayerService := class<concrete>():
             Player := player[Agent]
             PlayerStatsTable := PlayerStatsMap[Player]
             if(Stat = StatType.Example):
-                ExampleStat := PlayerStatsTable.Example
                 set PlayerStatsMap[Player] = player_stats_table:
                     MakePlayerStatsTable<constructor>(PlayerStatsTable)
                     Example := PlayerStatsTable.Example + Score
@@ -52,7 +51,6 @@ PlayerService := class<concrete>():
             Player := player[Agent]
             PlayerStatsTable := PlayerStatsMap[Player]
             if(Stat = StatType.Example):
-                ExampleStat := PlayerStatsTable.Example
                 set PlayerStatsMap[Player] = player_stats_table:
                     MakePlayerStatsTable<constructor>(PlayerStatsTable)
                     Example := PlayerStatsTable.Example - Score
@@ -70,7 +68,6 @@ PlayerService := class<concrete>():
             Player := player[Agent]
             PlayerStatsTable := PlayerStatsMap[Player]
             if(Stat = StatType.Example):
-                ExampleStat := PlayerStatsTable.Example
                 set PlayerStatsMap[Player] = player_stats_table:
                     MakePlayerStatsTable<constructor>(PlayerStatsTable)
                     Example := Score
