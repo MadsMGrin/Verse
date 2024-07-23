@@ -35,4 +35,5 @@ GameManager := class(creative_device):
         _PlayerRepository.SaveDataAsInt(Agent, stat.Example, manipulationType.Set, 5891324983)
 
     ShowStats(Agent:agent):void=
-        _PlayerRepository.GetDataAsInt(Agent, stat.Example)
+        ExampleData := _PlayerRepository.GetDataAsInt(Agent, stat.Example)
+        BillboardStats.SetText(StringToMessage("{ExampleData}"))
