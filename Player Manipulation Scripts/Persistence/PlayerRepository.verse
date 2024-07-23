@@ -32,10 +32,10 @@ PlayerRepository<public> := class<unique><concrete>():
     GetDataAsInt(Agent: agent, Stat: stat)<transacts>: int =
         if (GetStats := _PlayerService.GetPlayerStats[Agent]):
             StatKey := statTypeToString(Stat)
-            if (StatKey = "Money"):
+            if (StatKey = "Example"):
                 Amount := GetStats.Example
                 return Amount
             else:
                 return -1
         else:
-            return -1
+            return -2

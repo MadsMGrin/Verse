@@ -13,7 +13,6 @@ GameManager := class(creative_device):
     @editable DecrementStatButton : button_device = button_device{}
     @editable SetStatButton : button_device = button_device{}
     @editable ShowStatsButton : button_device = button_device{}
-    @editable BillboardStats : billboard_device = billboard_device{}
 
     OnBegin<override>()<suspends>:void=
         _DebugUtil.Log("@GrinernCreates")
@@ -35,5 +34,4 @@ GameManager := class(creative_device):
         _PlayerRepository.SaveDataAsInt(Agent, stat.Example, manipulationType.Set, 5891324983)
 
     ShowStats(Agent:agent):void=
-        ExampleData := _PlayerRepository.GetDataAsInt(Agent, stat.Example)
-        BillboardStats.SetText(StringToMessage("{ExampleData}"))
+        _DebugUtil.Debug("{_PlayerRepository.GetDataAsInt(Agent, stat.Example)}")
