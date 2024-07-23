@@ -34,4 +34,4 @@ GameManager := class(creative_device):
         _PlayerRepository.SaveDataAsInt(Agent, stat.Example, manipulationType.Set, 5891324983)
 
     ShowStats(Agent:agent):void=
-        _DebugUtil.Debug("{_PlayerRepository.GetDataAsInt(Agent, stat.Example)}")
+        _DebugUtil.Log("{_PlayerRepository.GetDataAsInt(Agent, stat.Example)}")
