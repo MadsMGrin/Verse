@@ -24,6 +24,7 @@ PlayerService := class<concrete>():
         var PlayerStats:player_stats_table = player_stats_table{}
         if:
             Player := player[Agent]
+            Player.IsActive[]
             PlayerStatsTable := PlayerStatsMap[Player]
             set PlayerStats = MakePlayerStatsTable(PlayerStatsTable)
         PlayerStats
@@ -33,14 +34,21 @@ PlayerService := class<concrete>():
         if:
             Player := player[Agent]
             PlayerStatsTable := PlayerStatsMap[Player]
-            if(Stat = StatType.Example):
+            if(Stat = StatType.Example and Player.IsActive[]):
                 ExampleStat := PlayerStatsTable.Example
                 set PlayerStatsMap[Player] = player_stats_table:
                     MakePlayerStatsTable<constructor>(PlayerStatsTable)
                     Example := PlayerStatsTable.Example + Score
+            else if(Stat = StatType.Money and Player.IsActive[]):
+                MoneyStat := PlayerStatsTable.Money
+                set PlayerStatsMap[Player] = player_stats_table:
+                    MakePlayerStatsTable<constructor>(PlayerStatsTable)
+                    Money := PlayerStatsTable.Money + Score
         then:
             if(Stat = StatType.Example):
                 _DebugUtil.Log("Example incremented by {Score}")
+            else if(Stat = StatType.Money):
+                _DebugUtil.Log("Money incremented by {Score}")
             else:
                 _DebugUtil.Error("Invalid Stat Type")
         else:
@@ -51,14 +59,21 @@ PlayerService := class<concrete>():
         if:
             Player := player[Agent]
             PlayerStatsTable := PlayerStatsMap[Player]
-            if(Stat = StatType.Example):
+            if(Stat = StatType.Example and Player.IsActive[]):
                 ExampleStat := PlayerStatsTable.Example
                 set PlayerStatsMap[Player] = player_stats_table:
                     MakePlayerStatsTable<constructor>(PlayerStatsTable)
                     Example := PlayerStatsTable.Example - Score
+            else if(Stat = StatType.Money and Player.IsActive[]):
+                MoneyStat := PlayerStatsTable.Money
+                set PlayerStatsMap[Player] = player_stats_table:
+                    MakePlayerStatsTable<constructor>(PlayerStatsTable)
+                    Money := PlayerStatsTable.Money - Score
         then:
             if(Stat = StatType.Example):
                 _DebugUtil.Log("Example decremented by {Score}")
+            else if(Stat = StatType.Money):
+               _DebugUtil.Log("Money decremented by {Score}")
             else:
                 _DebugUtil.Error("Invalid Stat Type")
         else:
@@ -69,7 +84,7 @@ PlayerService := class<concrete>():
         if:
             Player := player[Agent]
             PlayerStatsTable := PlayerStatsMap[Player]
-            if(Stat = StatType.Example):
+            if(Stat = StatType.Example and Player.IsActive[]):
                 ExampleStat := PlayerStatsTable.Example
                 set PlayerStatsMap[Player] = player_stats_table:
                     MakePlayerStatsTable<constructor>(PlayerStatsTable)
@@ -77,6 +92,8 @@ PlayerService := class<concrete>():
         then:
             if(Stat = StatType.Example):
                 _DebugUtil.Log("Example set to {Score}")
+            else if(Stat = StatType.Money):
+                _DebugUtil.Log("Action cannot be performed: Money cannot be set.")
             else:
                 _DebugUtil.Error("Invalid Stat Type")
         else:

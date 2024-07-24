@@ -13,6 +13,7 @@ PlayerRepository<public> := class<unique><concrete>():
     SaveDataAsInt(Agent: agent, Stat: stat, Manipulation: manipulationType, Amount: int): void =
         StatActions := map{
             stat.Example => StatType.Example
+            stat.Money => StatType.Money
         }
     
         ManipulationActions := map{
@@ -34,6 +35,9 @@ PlayerRepository<public> := class<unique><concrete>():
             StatKey := statTypeToString(Stat)
             if (StatKey = "Example"):
                 Amount := GetStats.Example
+                return Amount
+            else if (StatKey = "Money"):
+                Amount := GetStats.Money
                 return Amount
             else:
                 return -1

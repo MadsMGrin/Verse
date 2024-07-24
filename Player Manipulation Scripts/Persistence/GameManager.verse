@@ -6,6 +6,7 @@ using { /UnrealEngine.com/Temporary/Diagnostics }
 GameManager := class(creative_device):
     
     _PlayerRepository : PlayerRepository = PlayerRepository{}
+    
     _DebugUtil : DebugUtil = DebugUtil{}
 
     # Editable properties for manipulating stats
@@ -25,13 +26,13 @@ GameManager := class(creative_device):
         ShowStatsButton.InteractedWithEvent.Subscribe(ShowStats)
 
     IncrementStat(Agent:agent):void=
-        _PlayerRepository.SaveDataAsInt(Agent, stat.Example, manipulationType.Increment, 1)
+        _PlayerRepository.SaveDataAsInt(Agent, stat.Money, manipulationType.Increment, 17)
 
     DecrementStat(Agent:agent):void=
-        _PlayerRepository.SaveDataAsInt(Agent, stat.Example, manipulationType.Decrement, 1)
+        _PlayerRepository.SaveDataAsInt(Agent, stat.Money, manipulationType.Decrement, 5)
 
     SetStat(Agent:agent):void=
-        _PlayerRepository.SaveDataAsInt(Agent, stat.Example, manipulationType.Set, 5891324983)
+        _PlayerRepository.SaveDataAsInt(Agent, stat.Money, manipulationType.Set, 934)
 
     ShowStats(Agent:agent):void=
-        _DebugUtil.Log("{_PlayerRepository.GetDataAsInt(Agent, stat.Example)}")
+        _DebugUtil.Log("{_PlayerRepository.GetDataAsInt(Agent, stat.Money)}")

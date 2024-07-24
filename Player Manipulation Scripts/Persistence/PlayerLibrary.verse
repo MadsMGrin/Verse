@@ -8,6 +8,7 @@ var PlayerStatsMap:weak_map(player, player_stats_table) = map{}
 # Define an enum for different stats
 stat := enum:
     Example
+    Money
 
 # Define an enum for different manipulation types
 manipulationType := enum:
@@ -19,6 +20,7 @@ manipulationType := enum:
 statTypeToString(State: stat)<computes>:string=
     case(State):
         stat.Example => "Example"
+        stat.Money => "Money"
         
 # Function to convert a manipulation type enum to a string representation
 manipulationTypeToString(State: manipulationType)<computes>:string=
