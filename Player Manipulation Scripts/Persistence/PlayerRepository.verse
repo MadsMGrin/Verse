@@ -25,7 +25,6 @@ PlayerRepository<public> := class<unique><concrete>():
         # Perform the appropriate action based on the stat and manipulation type
         if (StatKey := StatActions[Stat], ManipulationAction := ManipulationActions[Manipulation]):
             ManipulationAction(Agent, StatKey, Amount)
-            _DebugUtil.Log("{Amount} of {statTypeToString(Stat)} {manipulationTypeToString(Manipulation)}")
         else:
             _DebugUtil.Error("Manipulation Type not found: {manipulationTypeToString(Manipulation)}")
 
